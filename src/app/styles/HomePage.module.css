@@ -1,0 +1,45 @@
+.container {
+    margin-top: 2rem;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  
+  .subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+  
+  .buttonGroup {
+    margin-top: 1rem;
+  }
+  
+  .logoutButton {
+    background-color: #dc3545;
+    color: #ffffff;
+  }
+  
+  .logoutButton:hover {
+    background-color: #c82333;
+  }
+  
+  .signInButton {
+    background-color: #007bff;
+    color: #ffffff;
+  }
+  
+  .signInButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .signUpButton {
+    background-color: #6c757d;
+    color: #ffffff;
+  }
+  
+  .signUpButton:hover {
+    background-color: #5a6268;
+  }
+  
