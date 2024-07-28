@@ -1,10 +1,26 @@
+.parent {
+  display: flex;
+  justify-content: center; /* Yatayda ortalama */
+  align-items: center; /* Dikeyde ortalama */
+  height: 100vh; /* Ebeveyn elemanın yüksekliği tüm ekranı kaplasın */
+  background-image: url('../../images/backgroundvazo.jpg'); /* Arka plan resmi */
+  background-size: cover; /* Resmi kapsayıcıya sığdırır */
+  background-position: center; /* Resmi ortalar */
+  background-repeat: no-repeat; /* Resmi tekrar etmez */
+}
+
 .container {
-    max-width: 500px;
-    margin-top: 2rem;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #F4F4F4;
+
   }
   
   .form {
-    background-color: #ffffff;
+    background-color: #ECECEC;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 0.375rem;
     padding: 1.5rem;
@@ -38,7 +54,7 @@
   .submitButton {
     width: 100%;
     padding: 0.75rem;
-    background-color: #2563eb;
+    background-color: #B79BCC;
     color: #ffffff;
     border: none;
     border-radius: 0.375rem;
@@ -47,6 +63,6 @@
   }
   
   .submitButton:hover {
-    background-color: #1d4ed8;
+    background-color: #ffffff;
   }
   

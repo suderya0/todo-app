@@ -1,45 +1,68 @@
+.parent {
+  display: flex;
+  justify-content: center; /* Yatayda ortalama */
+  align-items: center; /* Dikeyde ortalama */
+  height: 100vh; /* Ebeveyn elemanın yüksekliği tüm ekranı kaplasın */
+  background-image: url('../../images/backgroundvazo.jpg'); /* Arka plan resmi */
+  background-size: cover; /* Resmi kapsayıcıya sığdırır */
+  background-position: center; /* Resmi ortalar */
+  background-repeat: no-repeat; /* Resmi tekrar etmez */
+}
+
+
 .container {
     margin-top: 2rem;
   }
+
   
   .title {
     font-size: 2.5rem;
     font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
   }
   
   .subtitle {
     font-size: 1.25rem;
     font-weight: 300;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
   }
-  
   .buttonGroup {
     margin-top: 1rem;
+    display: flex;
+    justify-content: center; /* Butonları yatayda ortalar */
+    gap: 10rem;
   }
   
-  .logoutButton {
-    background-color: #dc3545;
-    color: #ffffff;
-  }
-  
-  .logoutButton:hover {
-    background-color: #c82333;
+  .signInButton, .signUpButton {
+    padding: 0.75rem 1.5rem; /* Buton içindeki boşlukları artırır */
+    font-size: 1rem; /* Yazı boyutunu artırır */
+    border: none;
+    border-radius: 0.5rem; /* Köşeleri yuvarlatır */
+    font-weight: 600; /* Yazıyı kalın yapar */
+    cursor: pointer; /* Fare ile üzerine gelindiğinde işaretçi değişir */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Geçiş efektleri */
+    
   }
   
   .signInButton {
-    background-color: #007bff;
+    background-color: #B79BCC; ;
     color: #ffffff;
   }
   
   .signInButton:hover {
-    background-color: #0056b3;
+    background-color:  #ffffff;
+    transform: scale(1.05); /* Hover'da butonu büyütür */
   }
   
   .signUpButton {
-    background-color: #6c757d;
+    background-color: #B79BCC;
     color: #ffffff;
   }
   
   .signUpButton:hover {
-    background-color: #5a6268;
+    background-color:  #ffffff;
+    transform: scale(1.05); /* Hover'da butonu büyütür */
   }
   

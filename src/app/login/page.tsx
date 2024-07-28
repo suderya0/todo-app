@@ -8,6 +8,7 @@ const LoginPage: React.FC = () => {
   const { register, handleSubmit, errors, onSubmit } = useLogin();
 
   return (
+    <div className={styles.parent}>
     <div className={styles.container}>
           <h1>Login Page</h1>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.formContainer}>
@@ -31,6 +32,7 @@ const LoginPage: React.FC = () => {
         </div>
         <button type="submit" className={styles.submitButton}>Log In</button>
       </form>
+    </div>
     </div>
   );
 };

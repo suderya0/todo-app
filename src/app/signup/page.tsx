@@ -8,7 +8,9 @@ const SignUpPage: React.FC = () => {
   const { register, handleSubmit, errors, onSubmit } = useSignUp();
 
   return (
-    <div className={styles.container}>
+    <div className={styles.parent}>
+    <div  className={styles.container}>
+      <h1>Sign Up</h1>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
         <div className={styles.formGroup}>
           <label htmlFor="firstName" className={styles.formLabel}>First Name</label>
@@ -57,6 +59,7 @@ const SignUpPage: React.FC = () => {
           Sign Up
         </button>
       </form>
+    </div>
     </div>
   );
 };

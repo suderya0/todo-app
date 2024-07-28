@@ -48,27 +48,28 @@ const TodoPage: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Welcome to your Dashboard, {user.email}</h1>
-      <p className={styles.subtitle}>Manage your to-do list here.</p>
+      <h1 className={styles.title}>Haydi başlayalım, {user.email}</h1>
+      <p className={styles.subtitle}>Bakalım bugün listede neler var.</p>
+      <button
+        onClick={async () => {
+          await auth.signOut();
+          window.location.href = '/';
+        }}
+        className={styles.logoutButton}
+      >
+        Logout
+      </button>
+      <div className={styles.formContainer}>
 
       <div className="mb-4">
-        <input
-          type="text"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className={styles.searchInput}
-          placeholder="Search..."
-        />
-      </div>
-
-      <div className="mb-4">
-        <input
+          <input
           type="text"
           value={newTodo}
           onChange={(e) => setNewTodo(e.target.value)}
           className={styles.newTodoInput}
           placeholder="New to-do item"
         />
+
         <button
           onClick={handleAddTodo}
           className={styles.addButton}
@@ -77,9 +78,23 @@ const TodoPage: React.FC = () => {
         </button>
       </div>
 
+      <div className="mb-4">
+          <input
+          type="text"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className={styles.searchInput}
+          placeholder="Search..."
+        />
+      </div>
+
+      
+      </div>
+
       <div className={styles.todoColumns}>
         <div className={styles.todoColumn}>
-          <h2>Incomplete Todos</h2>
+
+          <h2 className={styles.baslik}>Incomplete Todos</h2>
           <ul className="w-full">
             {filteredIncompleteTodos.map(todo => (
               <li key={todo.id} className={styles.todoItem}>
@@ -101,7 +116,7 @@ const TodoPage: React.FC = () => {
           </ul>
         </div>
         <div className={styles.todoColumn}>
-          <h2>Completed Todos</h2>
+          <h2 className={styles.baslik}>Completed Todos</h2>
           <ul className="w-full">
             {filteredCompletedTodos.map(todo => (
               <li key={todo.id} className={styles.todoItem}>
@@ -124,16 +139,7 @@ const TodoPage: React.FC = () => {
         </div>
       </div>
 
-      <button
-        onClick={async () => {
-          await auth.signOut();
-          alert('You have been logged out');
-          window.location.href = '/';
-        }}
-        className={styles.logoutButton}
-      >
-        Logout
-      </button>
+
     </div>
   );
 };

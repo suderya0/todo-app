@@ -1,3 +1,14 @@
+.parent {
+  display: flex;
+  justify-content: center; /* Yatayda ortalama */
+  align-items: center; /* Dikeyde ortalama */
+  height: 100vh; /* Ebeveyn elemanın yüksekliği tüm ekranı kaplasın */
+  background-image: url('../../images/backgroundvazo.jpg'); /* Arka plan resmi */
+  background-size: cover; /* Resmi kapsayıcıya sığdırır */
+  background-position: center; /* Resmi ortalar */
+  background-repeat: no-repeat; /* Resmi tekrar etmez */
+}
+
 .formContainer {
     max-width: 400px;
     margin: 0 auto;
@@ -19,7 +30,7 @@
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
-    background-color: #007bff;
+    background-color: #B79BCC;
     color: white;
     cursor: pointer;
   }

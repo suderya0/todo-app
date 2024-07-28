@@ -4,16 +4,22 @@
   flex-direction: column;
   padding: 1rem;
   background-color: #f3f4f6;
+  background-image: url('../../images/backgrounpiknik.jpg'); /* Arka plan resmi */
+
 }
 
 .title {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .subtitle {
   margin-bottom: 1rem;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .tabButton {
@@ -30,21 +36,33 @@
 }
 
 .activeTab {
-  background-color: #3b82f6;
+  background-color: #004f30;
   color: #fff;
 }
 
+/* Girdi alanları stilini ayarla */
+.formContainer {
+  display: flex;
+  flex-direction: column; /* İçerikleri dikeyde sıralar */
+  align-items: center; /* İçerikleri yatayda ortalar */
+  justify-content: center; /* İçeriği dikeyde ortalar */
+  height: 100; /* Kapsayıcının yüksekliğini ekran yüksekliğine ayarlar */
+  padding: 1rem; /* İç boşluk ekler */
+}
+
+/* Girdi alanları stilini ayarla */
 .searchInput, .newTodoInput {
   padding: 0.5rem;
   border-radius: 0.5rem;
   border: 1px solid #d1d5db;
   margin-bottom: 1rem;
-  width: 100%;
+  width: 300px; /* Genişlik ayarı */
 }
 
+/* Buton stilini ayarla */
 .addButton {
   padding: 0.5rem 1rem;
-  background-color: #3b82f6;
+  background-color: #004f30;
   color: #fff;
   font-weight: bold;
   border-radius: 0.5rem;
@@ -53,60 +71,83 @@
 }
 
 .addButton:hover {
-  background-color: #2563eb;
+  background-color: #004f30;
 }
 
-.todoItem {
-  display: flex;
-  align-items: center;
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
-  border-radius: 0.5rem;
-  background-color: #fff;
-  border: 1px solid #d1d5db;
-}
-
-.todoText {
-  flex: 1;
-}
-
-.completed {
-  text-decoration: line-through;
-}
-
-.deleteButton {
-  color: #ef4444;
-  cursor: pointer;
-}
-
-.deleteButton:hover {
-  color: #dc2626;
-}
 
 .logoutButton {
-  padding: 0.5rem 1rem;
+  position: absolute; /* Konumlandırmayı mutlak yapar */
+  top: 1rem; /* Üstten 1rem boşluk bırakır */
+  right: 1rem; /* Sağdan 1rem boşluk bırakır */
+  padding: 0.25rem 0.75rem; /* Daha küçük iç boşluklar */
   background-color: #ef4444;
   color: #fff;
   font-weight: bold;
-  border-radius: 0.5rem;
+  border-radius: 0.375rem; /* Köşeleri daha fazla yuvarlatır */
   cursor: pointer;
-  margin-top: 1rem;
+  font-size: 0.875rem; /* Daha küçük yazı boyutu */
+  border: none; /* Kenarlıkları kaldırır */
 }
 
 .logoutButton:hover {
   background-color: #dc2626;
 }
 
-/* Yeni CSS Sınıfları */
 .todoColumns {
+  
   display: flex;
-  gap: 1rem; /* Sütunlar arasında boşluk */
+  justify-content: space-between;
+  gap: 1rem; /* Kolonlar arasına boşluk ekler */
 }
 
 .todoColumn {
+  background-color: #AFACD0;
   flex: 1;
-  background-color: #fff;
-  border: 1px solid #d1d5db;
-  border-radius: 0.5rem;
+  background-size: cover; /* Resmi kapsayıcının boyutuna göre ölçeklendirir */
   padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.todoColumn h2 {
+  color: #333;
+  text-align: center;
+}
+
+.todoItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.8); /* İçeriği ayıran hafif bir arka plan */
+  border-radius: 0.375rem;
+}
+
+
+
+.todoText {
+  flex: 1;
+  margin-left: 0.5rem;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.deleteButton {
+  background-color: #ef4444;
+  color: #fff;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  background-color: #dc2626;
+}
+
+.baslik{
+  font-family: 'Courier New', Courier, monospace;
 }

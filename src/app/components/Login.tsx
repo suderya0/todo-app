@@ -18,7 +18,6 @@ export const useLogin = () => {
   const onSubmit = async (data: FormData) => {
     try {
       await signInWithEmailAndPassword(auth, data.email, data.password);   //function from firebase to check sign in and out
-      alert('User logged in successfully!');
       router.push('/todo');                       //push the todo page after logged in using await
     } catch (error) {
       const authError = error as AuthError;

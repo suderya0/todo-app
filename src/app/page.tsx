@@ -22,6 +22,7 @@ const HomePage: React.FC = () => {
   }
 
   return (
+    <div className={styles.parent}>
     <div className={`container ${styles.container}`}>
       {user ? (
         <div className="text-center">
@@ -39,8 +40,8 @@ const HomePage: React.FC = () => {
         </div>
       ) : (
         <div className="text-center">
-          <h1 className={styles.title}>Uygulamaya Hoşgeldiniz</h1>
-          <p className={styles.subtitle}>Bu bir To-Do uygulamasıdır. Yapılacaklar listenizi yönetin ve düzenleyin.</p>
+          <h1 className={styles.title}>Merhaba</h1>
+          <p className={styles.subtitle}>Hayatını düzenleme vakti geldi.</p>
           <div className={styles.buttonGroup}>
             <button 
               className={`btn ${styles.signInButton} mr-2`}
@@ -57,6 +58,7 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 };
