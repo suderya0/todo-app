@@ -89,6 +89,20 @@
   border: none; /* Kenarlıkları kaldırır */
 }
 
+.calenderButton{
+  position: absolute; /* Konumlandırmayı mutlak yapar */
+  top: 5rem; /* Üstten 1rem boşluk bırakır */
+  right: 1rem; /* Sağdan 1rem boşluk bırakır */
+  padding: 0.25rem 0.75rem; /* Daha küçük iç boşluklar */
+  background-color:#8b96f0;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 0.375rem; /* Köşeleri daha fazla yuvarlatır */
+  cursor: pointer;
+  font-size: 0.875rem; /* Daha küçük yazı boyutu */
+  border: none; /* Kenarlıkları kaldırır */
+}
+
 .logoutButton:hover {
   background-color: #dc2626;
 }
@@ -149,5 +163,5 @@
 }
 
 .baslik{
-  font-family: 'Courier New', Courier, monospace;
+  font-family:monospace;
 }

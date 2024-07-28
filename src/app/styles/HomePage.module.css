@@ -1,21 +1,32 @@
-.parent {
-  display: flex;
-  justify-content: center; /* Yatayda ortalama */
-  align-items: center; /* Dikeyde ortalama */
-  height: 100vh; /* Ebeveyn elemanın yüksekliği tüm ekranı kaplasın */
-  background-image: url('../../images/backgroundvazo.jpg'); /* Arka plan resmi */
-  background-size: cover; /* Resmi kapsayıcıya sığdırır */
-  background-position: center; /* Resmi ortalar */
-  background-repeat: no-repeat; /* Resmi tekrar etmez */
-}
 
+    .parent{
+      background-color: #d6bdf7;
+      min-width: 100vh;
+    }
+    .container {
+    margin-top: 20vh; 
 
-.container {
-    margin-top: 2rem;
+    }
+    .textcenter{
+    justify-content: center;
+    text-align: center;
+    }
+  .header{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    padding: 1.3rem, 10%;
+    background-color:rgba(0, 0, 0, .1);
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    z-index: 100;
   }
 
-  
-  .title {
+  .textcenter h1 {
+    margin-top: 150px;
     font-size: 2.5rem;
     font-weight: 700;
     font-family: 'Courier New', Courier, monospace;
@@ -28,12 +39,7 @@
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
   }
-  .buttonGroup {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center; /* Butonları yatayda ortalar */
-    gap: 10rem;
-  }
+
   
   .signInButton, .signUpButton {
     padding: 0.75rem 1.5rem; /* Buton içindeki boşlukları artırır */
@@ -43,26 +49,67 @@
     font-weight: 600; /* Yazıyı kalın yapar */
     cursor: pointer; /* Fare ile üzerine gelindiğinde işaretçi değişir */
     transition: background-color 0.3s ease, transform 0.2s ease; /* Geçiş efektleri */
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
     
   }
   
   .signInButton {
-    background-color: #B79BCC; ;
+    background-color: #3e3e3e;
     color: #ffffff;
+    border-radius: 5%;
+    border: 10px solid #000000;
+    border-color: rgb(0, 0, 0);
   }
   
   .signInButton:hover {
-    background-color:  #ffffff;
+    background-color: #ffffff;
     transform: scale(1.05); /* Hover'da butonu büyütür */
   }
   
   .signUpButton {
-    background-color: #B79BCC;
+    background-color: #3e3e3e;
     color: #ffffff;
+    border-radius: 5%;
+    border: 10px solid #000000;
+    border-color: rgb(0, 0, 0);
   }
   
   .signUpButton:hover {
-    background-color:  #ffffff;
+    background-color: #ffffff;
     transform: scale(1.05); /* Hover'da butonu büyütür */
   }
+
+  .gridContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* İki sütun oluşturur */
+    grid-template-rows: repeat(2, 1fr); /* İki satır oluşturur */
+    gap: 1rem; /* Dikdörtgenler arasındaki boşluk */
+    width: 2000px;
+    margin-left: 70px;
+
+  }
   
+  .horizontalRectangle1 {
+    background-color:blanchedalmond; /* Dikdörtgenlerin arka plan rengi */
+    width: 100%; /* Genişlik */
+    height: 500px; /* Yükseklik */
+    border-radius: 5%;
+  }
+
+  .horizontalRectangle1 ul{
+    font-family: monospace;
+    font-size: 25px;
+  }
+  
+  .horizontalRectangle2 {
+    background-color:blanchedalmond; /* Dikdörtgenlerin arka plan rengi */
+    width: 100%; /* Genişlik */
+    height: 500px; /* Yükseklik */
+    border-radius: 5%;
+  }
+  
+  .horizontalRectangle2 ul{
+    font-family: monospace;
+    font-size: 25px;
+  }

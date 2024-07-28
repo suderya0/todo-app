@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { auth } from '../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useRouter } from 'next/navigation';
 
 interface Todo {
   id: string;
@@ -101,6 +102,10 @@ const useTodos = () => {
 
     fetchTodos();
   };
+  const router = useRouter(); 
+  const handleCalenderRedirect = () => {
+    router.push('/calender'); // Butona tıklanınca yönlendirme işlemini yapın
+  };
 
   return {
     user,
@@ -115,6 +120,7 @@ const useTodos = () => {
     handleAddTodo,
     handleToggleComplete,
     handleDeleteTodo,
+    handleCalenderRedirect,
   };
 };
 

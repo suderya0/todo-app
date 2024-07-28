@@ -26,10 +26,15 @@ export const useLogin = () => {
     }
   };
 
+  const handleRegisterRedirect = () => {
+    router.push('/signup'); // Butona tıklanınca yönlendirme işlemini yapın
+  };
+
   return {             //send the attributes to the /login/page.tsx
     register,
     handleSubmit,
     errors,
     onSubmit,
+    handleRegisterRedirect
   };
 };

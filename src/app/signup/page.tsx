@@ -10,8 +10,9 @@ const SignUpPage: React.FC = () => {
   return (
     <div className={styles.parent}>
     <div  className={styles.container}>
-      <h1>Sign Up</h1>
+      
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+      <h1>Sign Up</h1>
         <div className={styles.formGroup}>
           <label htmlFor="firstName" className={styles.formLabel}>First Name</label>
           <input 

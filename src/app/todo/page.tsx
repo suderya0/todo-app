@@ -19,6 +19,7 @@ const TodoPage: React.FC = () => {
     handleAddTodo,
     handleToggleComplete,
     handleDeleteTodo,
+    handleCalenderRedirect,
   } = useTodos();
 
   if (loading || loadingTodos) {
@@ -59,6 +60,9 @@ const TodoPage: React.FC = () => {
       >
         Logout
       </button>
+
+      <button type="button" onClick={handleCalenderRedirect} className={styles.calenderButton}>Calender</button>
+
       <div className={styles.formContainer}>
 
       <div className="mb-4">

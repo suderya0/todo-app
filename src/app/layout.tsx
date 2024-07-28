@@ -5,7 +5,7 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <html lang="en">
       <head>
-        <title>Next.js Authentication</title>
+        <title>LeTTo</title>
       </head>
       <body>
         {children}
