@@ -1,14 +1,18 @@
-// pages/index.tsx
 import React from 'react';
-import Calendar from '../components/Calender';
+import dynamic from 'next/dynamic';
 
-const HomePage: React.FC = () => {
+// Dinamik olarak bileşeni istemci tarafında yükleyin
+const Calendar = dynamic(() => import('../components/Calender'), {
+  ssr: false // Sunucu tarafında render edilmemesi için
+});
+
+const Home: React.FC = () => {
   return (
     <div>
-      <h1>My Basic Calendar</h1>
+      <h1>Welcome to the Calendar App</h1>
       <Calendar />
     </div>
   );
-};
+}
 
-export default  Calendar;
+export default Home;

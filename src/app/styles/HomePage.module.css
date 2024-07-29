@@ -1,7 +1,10 @@
 
     .parent{
       background-color: #d6bdf7;
-      min-width: 100vh;
+      background-image: url('../../images/homepagebackground.jpg'); 
+      background-size: cover; /* Resmi kapsayıcıya sığdırır */
+      background-position: center; /* Resmi ortalar */
+      background-repeat: no-repeat; /* Resmi tekrar etmez */
     }
     .container {
     margin-top: 20vh; 
@@ -12,7 +15,6 @@
     text-align: center;
     }
   .header{
-    position: fixed;
     top:0;
     left:0;
     width: 100%;
@@ -55,28 +57,28 @@
   }
   
   .signInButton {
-    background-color: #3e3e3e;
+    background-color: #FDC8C4;
     color: #ffffff;
     border-radius: 5%;
-    border: 10px solid #000000;
-    border-color: rgb(0, 0, 0);
+    border: 5px solid #ffffff;
+    border-color: #ffffff;
   }
   
   .signInButton:hover {
-    background-color: #ffffff;
+    background-color: #CDEDE7;
     transform: scale(1.05); /* Hover'da butonu büyütür */
   }
   
   .signUpButton {
-    background-color: #3e3e3e;
+    background-color: #FDC8C4;
     color: #ffffff;
     border-radius: 5%;
-    border: 10px solid #000000;
-    border-color: rgb(0, 0, 0);
+    border: 5px solid #ffffff;
+    border-color: #ffffff;
   }
   
   .signUpButton:hover {
-    background-color: #ffffff;
+    background-color: #CDEDE7;
     transform: scale(1.05); /* Hover'da butonu büyütür */
   }
 
@@ -84,17 +86,21 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* İki sütun oluşturur */
     grid-template-rows: repeat(2, 1fr); /* İki satır oluşturur */
-    gap: 1rem; /* Dikdörtgenler arasındaki boşluk */
+    gap: 10rem; /* Dikdörtgenler arasındaki boşluk */
     width: 2000px;
-    margin-left: 70px;
+    
 
   }
   
   .horizontalRectangle1 {
-    background-color:blanchedalmond; /* Dikdörtgenlerin arka plan rengi */
+    background-color:transparent; /* Dikdörtgenlerin arka plan rengi */
+    backdrop-filter: blur(20px);
     width: 100%; /* Genişlik */
     height: 500px; /* Yükseklik */
     border-radius: 5%;
+    border: 10px solid #000000;
+    border-color: #F99C90;
+    margin-left: 70px;
   }
 
   .horizontalRectangle1 ul{
@@ -103,10 +109,16 @@
   }
   
   .horizontalRectangle2 {
-    background-color:blanchedalmond; /* Dikdörtgenlerin arka plan rengi */
+    background-color:transparent; /* Dikdörtgenlerin arka plan rengi */
+    backdrop-filter: blur(20px);
     width: 100%; /* Genişlik */
     height: 500px; /* Yükseklik */
     border-radius: 5%;
+    margin-right: 70px;
+    margin-left: 150px;
+    border: 10px solid #000000;
+    border-color: #99F7E5;
+
   }
   
   .horizontalRectangle2 ul{

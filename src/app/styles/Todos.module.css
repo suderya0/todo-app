@@ -4,7 +4,10 @@
   flex-direction: column;
   padding: 1rem;
   background-color: #f3f4f6;
-  background-image: url('../../images/backgrounpiknik.jpg'); /* Arka plan resmi */
+  background-image: url('../../images/todobackground.png'); /* Arka plan resmi */
+  background-size: cover; /* Resmi kapsayıcıya sığdırır */
+  background-position: center; /* Resmi ortalar */
+  background-repeat: no-repeat; /* Resmi tekrar etmez */
 
 }
 
@@ -115,7 +118,8 @@
 }
 
 .todoColumn {
-  background-color: #AFACD0;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
   flex: 1;
   background-size: cover; /* Resmi kapsayıcının boyutuna göre ölçeklendirir */
   padding: 1rem;
@@ -142,6 +146,8 @@
 .todoText {
   flex: 1;
   margin-left: 0.5rem;
+  font-family:monospace;
+  font-size: 40px;
 }
 
 .completed {

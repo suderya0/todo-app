@@ -12,7 +12,7 @@ const SignUpPage: React.FC = () => {
     <div  className={styles.container}>
       
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-      <h1>Sign Up</h1>
+      <h1 >Sign Up</h1>
         <div className={styles.formGroup}>
           <label htmlFor="firstName" className={styles.formLabel}>First Name</label>
           <input 

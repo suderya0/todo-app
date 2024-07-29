@@ -6,12 +6,14 @@ import { auth, db } from '../firebase';
 import { AuthError } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import { useRouter } from 'next/navigation';
+import { Timestamp } from 'firebase/firestore';
 
 type FormData = {
   email: string;
   password: string;
   firstName: string;
   lastName: string;
+  createdDate: Date;
 }; 
 
 export const useSignUp = () => {
@@ -27,10 +29,12 @@ export const useSignUp = () => {
       const userCredential = await createUserWithEmailAndPassword(auth, data.email, data.password); //firebase function for creating user
       const user = userCredential.user;
       
+      
       await setDoc(doc(db, 'users', user.uid), {           //save the user in firebase
         firstName: data.firstName,
         lastName: data.lastName,
         email: data.email,
+        createdDate: Timestamp.now()
       });
 
       await sendEmailVerification(userCredential.user)   //email validation

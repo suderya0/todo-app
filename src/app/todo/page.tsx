@@ -49,8 +49,7 @@ const TodoPage: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Haydi başlayalım, {user.email}</h1>
-      <p className={styles.subtitle}>Bakalım bugün listede neler var.</p>
+      <h1 className={styles.title}>To Do List</h1>
       <button
         onClick={async () => {
           await auth.signOut();
@@ -99,7 +98,7 @@ const TodoPage: React.FC = () => {
         <div className={styles.todoColumn}>
 
           <h2 className={styles.baslik}>Incomplete Todos</h2>
-          <ul className="w-full">
+          <ul className={"w-full"}>
             {filteredIncompleteTodos.map(todo => (
               <li key={todo.id} className={styles.todoItem}>
                 <input

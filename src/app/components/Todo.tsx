@@ -9,7 +9,7 @@ interface Todo {
   id: string;
   text: string;        //Todo items
   completed: boolean;
-  createdAt: any;
+  createdAt: Date;
 }
 
 const useTodos = () => {      
