@@ -8,11 +8,19 @@
     }
     .container {
     margin-top: 20vh; 
-
     }
+    .navbar{
+      justify-content: end;
+    }
+    .navbar ul{
+      justify-content: end;
+      
+     }
+
     .textcenter{
     justify-content: center;
     text-align: center;
+    
     }
   .header{
     top:0;
@@ -22,11 +30,31 @@
     background-color:rgba(0, 0, 0, .1);
     backdrop-filter: blur(20px);
     display: flex;
-    justify-content: end;
-    align-items: center;
-    z-index: 100;
+   
   }
 
+  .logoDiv{
+    display: flex;
+    align-items: center;
+
+  }
+
+  .logo{
+    height: 60px; 
+    margin-right: 40px;
+    background-image: url('../favicon.ico');
+    background-size: cover; /* Resmi kapsayıcıya sığdırır */
+    background-position: center; /* Resmi ortalar */
+    background-repeat: no-repeat; /* Resmi tekrar etmez */
+  }
+
+  .header p{
+    margin-right: 1300px;
+    margin-left: 150px;
+    justify-content: center;
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+  }
   .textcenter h1 {
     margin-top: 150px;
     font-size: 2.5rem;
@@ -53,7 +81,7 @@
     transition: background-color 0.3s ease, transform 0.2s ease; /* Geçiş efektleri */
     margin-left: 2.5rem;
     margin-right: 2.5rem;
-    
+    justify-content: end;
   }
   
   .signInButton {
@@ -66,7 +94,7 @@
   
   .signInButton:hover {
     background-color: #CDEDE7;
-    transform: scale(1.05); /* Hover'da butonu büyütür */
+    transform: scale(1.05); 
   }
   
   .signUpButton {
@@ -79,49 +107,49 @@
   
   .signUpButton:hover {
     background-color: #CDEDE7;
-    transform: scale(1.05); /* Hover'da butonu büyütür */
+    transform: scale(1.05); 
   }
-
   .gridContainer {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* İki sütun oluşturur */
-    grid-template-rows: repeat(2, 1fr); /* İki satır oluşturur */
-    gap: 10rem; /* Dikdörtgenler arasındaki boşluk */
-    width: 2000px;
-    
-
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 300px; /* Responsive için gap'leri px ile ayarlıyoruz */
+    width: 90%; /* Ekranın genişliğine göre ayarlanır */
+    max-width: 100vw; /* Tam genişlik */
+    box-sizing: border-box; /* Padding ve border'ı elementin boyutlarına dahil eder */
+    margin: 0 auto; /* Ortalamak için */
+  }
+  
+  .horizontalRectangle1,
+  .horizontalRectangle2 {
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    border-radius: 5%;
+    border: 10px solid #000000;
+    box-sizing: border-box; /* Padding ve border'ı elementin boyutlarına dahil eder */
   }
   
   .horizontalRectangle1 {
-    background-color:transparent; /* Dikdörtgenlerin arka plan rengi */
-    backdrop-filter: blur(20px);
-    width: 100%; /* Genişlik */
-    height: 500px; /* Yükseklik */
-    border-radius: 5%;
-    border: 10px solid #000000;
     border-color: #F99C90;
-    margin-left: 70px;
-  }
-
-  .horizontalRectangle1 ul{
-    font-family: monospace;
-    font-size: 25px;
   }
   
   .horizontalRectangle2 {
-    background-color:transparent; /* Dikdörtgenlerin arka plan rengi */
-    backdrop-filter: blur(20px);
-    width: 100%; /* Genişlik */
-    height: 500px; /* Yükseklik */
-    border-radius: 5%;
-    margin-right: 70px;
-    margin-left: 150px;
-    border: 10px solid #000000;
     border-color: #99F7E5;
-
+    display: flex;
+    align-items: center; /* İçeriği dikeyde ortalar */
+    justify-content: center; /* İçeriği yatayda ortalar */
   }
   
-  .horizontalRectangle2 ul{
+  .horizontalRectangle1 ul,
+  .horizontalRectangle2 ul {
     font-family: monospace;
-    font-size: 25px;
+    font-size: 1rem; 
+    margin: 0;
+    padding: 50px;
+  }
+  
+  /* Esnek düzen ve minimum yüksekliği ayarla */
+  .horizontalRectangle1,
+  .horizontalRectangle2 {
+    min-height: 200px; /* Minimum yükseklik ayarı */
   }

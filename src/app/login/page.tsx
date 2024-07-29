@@ -10,6 +10,17 @@ const LoginPage: React.FC = () => {
   return (
     
     <div className={styles.parent}>
+      
+        <header className={styles.header}>
+            <div className={styles.logoDiv}>
+               <a href="/" className={styles.logoLink}>
+                <div className={styles.logo} />
+                <p>LeTTo</p>
+              </a>
+                 </div> 
+               <div className={styles.navbar}>
+            </div>
+        </header>
     <div className={styles.container}>
           
       <form onSubmit={handleSubmit(onSubmit)} className={styles.formContainer}>

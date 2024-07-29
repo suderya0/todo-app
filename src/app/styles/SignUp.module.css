@@ -1,13 +1,61 @@
 .parent {
-  display: flex;
-  justify-content: center; /* Yatayda ortalama */
-  align-items: center; /* Dikeyde ortalama */
+
   height: 100vh; /* Ebeveyn elemanın yüksekliği tüm ekranı kaplasın */
   background-image: url('../../images/signinoutbackgraund.jpg'); /* Arka plan resmi */
   background-size: cover; /* Resmi kapsayıcıya sığdırır */
   background-position: center; /* Resmi ortalar */
   background-repeat: no-repeat; /* Resmi tekrar etmez */
 }
+
+.container{
+  justify-content: center;
+  align-items: center; 
+  display: flex;
+  margin-top: 200px;
+}
+
+.header{
+  top:0;
+  left:0;
+  padding: 1.3rem, 10%;
+  background-color:rgba(0, 0, 0, .1);
+  backdrop-filter: blur(10px);
+  display: flex;
+  height: 10%;
+}
+
+.logoLink {
+  text-decoration: none; /* Alt çizgiyi kaldır */
+  color: inherit; /* Metin rengini üst öğeden al */
+  display: flex;
+  align-items: center; /* Logo ve metni dikeyde ortala */
+}
+
+.logoLink p {
+  margin-right: 1300px;
+  margin-left: 150px;
+  justify-content: center;
+  font-size: 50px;
+  color: rgb(255, 255, 255);
+}
+
+
+.logoDiv{
+  display: flex;
+  align-items: center;
+
+}
+
+.logo{
+  height: 60px; 
+  margin-right: 40px;
+  background-image: url('../favicon.ico');
+  background-size: cover; /* Resmi kapsayıcıya sığdırır */
+  background-position: center; /* Resmi ortalar */
+  background-repeat: no-repeat; /* Resmi tekrar etmez */
+}
+
+
 .form {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 0.375rem;

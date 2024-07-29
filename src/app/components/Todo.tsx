@@ -107,6 +107,10 @@ const useTodos = () => {
     router.push('/calender'); // Butona tıklanınca yönlendirme işlemini yapın
   };
 
+  const handleLoggedOutRedirect = () =>{
+    router.push("/login");  //Logout yapıldıktan sonra geri tuşuna basıldığında login safasına yönlendirir
+  }
+
   return {
     user,
     loading,
@@ -121,6 +125,7 @@ const useTodos = () => {
     handleToggleComplete,
     handleDeleteTodo,
     handleCalenderRedirect,
+    handleLoggedOutRedirect,
   };
 };
 

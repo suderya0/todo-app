@@ -22,18 +22,19 @@ const TodoPage: React.FC = () => {
     handleCalenderRedirect,
   } = useTodos();
 
-  if (loading || loadingTodos) {
-    return <div>Loading...</div>;
-  }
+    if (loading || loadingTodos) {
+      
+    if (!user) {
+      return (
+        <div>
+          <h1>You are not logged in</h1>
+          <p>Please <a href="/login">login</a> to access this page.</p>
+        </div>
+      );
+    }
+      return <div>Loading...</div>;
+    }
 
-  if (!user) {
-    return (
-      <div>
-        <h1>You are not logged in</h1>
-        <p>Please <a href="/login">login</a> to access this page.</p>
-      </div>
-    );
-  }
 
   const search = searchQuery?.toLowerCase() ?? '';
 

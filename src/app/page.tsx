@@ -24,7 +24,11 @@ const HomePage: React.FC = () => {
   return (
 <div className={styles.parent}>
       <header className={styles.header}>
-        <nav className={styles.navbar}>
+        <div className={styles.logoDiv}>
+        <div  className={styles.logo} />
+        <p>LeTTo</p>
+        </div>
+        <div className={styles.navbar}>
           <ul>
             <button 
               className={`btn ${styles.signInButton} mr-2`}
@@ -39,14 +43,14 @@ const HomePage: React.FC = () => {
               Sign Up
             </button>
           </ul>
-        </nav>
+        </div>
       </header>
 
       <div className={styles.textcenter}>
         <h1>Hello</h1>
         <p className={styles.subtitle}>Manage your duties.</p>
       </div>
-
+      
       <div className={styles.gridContainer}>
         <div className={styles.horizontalRectangle1}>
           <ul>
