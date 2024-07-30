@@ -24,11 +24,11 @@ const HomePage: React.FC = () => {
   return (
 <div className={styles.parent}>
       <header className={styles.header}>
-        <div className={styles.logoDiv}>
-        <div  className={styles.logo} />
-        <p>LeTTo</p>
-        </div>
+    
         <div className={styles.navbar}>
+          <div className={styles.logoDiv}>
+           <p>LeTTo</p>
+          </div>
           <ul>
             <button 
               className={`btn ${styles.signInButton} mr-2`}

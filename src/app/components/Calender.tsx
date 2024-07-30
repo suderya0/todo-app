@@ -1,21 +1,20 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
-import insteractionPlugin from '@fullcalendar/interaction';
-import { useRouter } from 'next/navigation';
+import interactionPlugin from '@fullcalendar/interaction';
 import { EventInput } from '@fullcalendar/core';
 import useTodos from '../components/Todo'; // useTodos kancasını içe aktarın
+import styles from '../styles/Calender.module.css';
 
 interface Todo {
-    id: string;
-    text: string;        //Todo items
-    completed: boolean;
-    createdAt: Date;
-  }
-
+  id: string;
+  text: string;        //Todo items
+  completed: boolean;
+  createdAt: Date;
+}
 
 const Calendar: React.FC = () => {
   const {
@@ -24,40 +23,37 @@ const Calendar: React.FC = () => {
     handleCalenderRedirect
   } = useTodos();
 
-  // Yapılacakları FullCalendar'ın `events` özelliği için dönüştür
   const transformTodosToEvents = (todos: Todo[]): EventInput[] => {
     return todos.map(todo => ({
       title: todo.text,
-      start: todo.createdAt, // Tarih formatı uygun olmalıdır
-      // Diğer özelleştirmeler yapılabilir
+      start: todo.createdAt, 
+      
     }));
   };
 
   const events = transformTodosToEvents([...incompleteTodos, ...completedTodos]);
 
   return (
-    <div>
-      <h1>Calendar</h1>
+    <div className={styles.calendarContainer}>
+      <h1 className={styles.calendarTitle}>Calendar</h1>
       <FullCalendar
-        plugins={[dayGridPlugin, timeGridPlugin, insteractionPlugin]}
+        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
         initialView='dayGridMonth'
         headerToolbar= {{
-          start: "today prev , next",
+          start: "today prev,next",
           center: "title",
-          end: "dayGridMonth, timeGridWeek, timeGridDay"  
-
+          end: "dayGridMonth,timeGridWeek,timeGridDay"  
         }}
         height={"90vh"}
-        weekends={false}
+        weekends={true}
         events={events}
         eventContent={renderEventContent}
+        firstDay={1} 
       />
-      
     </div>
   );
 };
 
-// Custom render function for event content
 function renderEventContent(eventInfo: any) {
   return (
     <>

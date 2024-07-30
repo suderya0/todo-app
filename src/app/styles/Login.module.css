@@ -1,27 +1,27 @@
+/* Genel stiller */
 .parent {
-  height: 100vh; /* Ebeveyn elemanın yüksekliği tüm ekranı kaplasın */
   background-image: url('../../images/signinoutbackgraund.jpg'); /* Arka plan resmi */
-  background-size: cover; /* Resmi kapsayıcıya sığdırır */
   background-position: center; /* Resmi ortalar */
   background-repeat: no-repeat; /* Resmi tekrar etmez */
-  
+  background-size: cover;
+  background-attachment: fixed;
+  height: 500vh;
 }
-.container{
+
+.container {
   justify-content: center;
   align-items: center; 
   display: flex;
-  margin-top: 200px;
+  margin-top: 100px;
 }
 
-
-.header{
-  top:0;
-  left:0;
-  padding: 1.3rem, 10%;
-  background-color:rgba(0, 0, 0, .1);
-  backdrop-filter: blur(0px);
+.header {
+  top: 0;
+  left: 0;
+  padding: 1.3rem 10%; /* Düzeltildi */
+  background-color: rgba(0, 0, 0, .1);
+  backdrop-filter: blur(10px);
   display: flex;
-  height: 10%;
 }
 
 .logoLink {
@@ -35,101 +35,160 @@
   margin-right: 1300px;
   margin-left: 150px;
   justify-content: center;
-  font-size: 50px;
   color: rgb(255, 255, 255);
 }
 
-
-.logoDiv{
+.logoDiv {
   display: flex;
   align-items: center;
-
 }
-
-.logo{
-  height: 60px; 
-  margin-right: 40px;
-  background-image: url('../favicon.ico');
-  background-size: cover; /* Resmi kapsayıcıya sığdırır */
-  background-position: center; /* Resmi ortalar */
-  background-repeat: no-repeat; /* Resmi tekrar etmez */
-}
-
-
-
 
 .formContainer {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 5px solid #dddddd;
-    border-radius: 8px;
-    background-color: transparent;
-    backdrop-filter: blur(20px);
-    position: relative;
+  margin: 0 auto;
+  padding: 20px;
+  border: 5px solid #dddddd;
+  border-radius: 8px;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  position: relative;
+}
+
+.formContainer h1 {
+  font-size: 36px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.inputField {
+  margin-bottom: 15px;
+  height: 50px;
+  width: 95%;
+  padding: 6px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background: transparent;
+  backdrop-filter: blur(50px);
+}
+
+.svgUser {
+  position: absolute;
+  right: 10px;
+  top: 140px;
+  width: 100px;
+}
+
+.svgLock {
+  position: absolute;
+  right: 10px;
+  top: 220px;
+  width: 100px;
+}
+
+.submitButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  height: 45px;
+  border-radius: 40px;
+}
+
+.submitButton:hover {
+  background-color: rgb(94, 94, 94);
+}
+
+.registerButton {
+  background-color: black;
+  color: white;
+  border-radius: 40px;
+  width: 150px;
+  height: 40px;
+}
+
+.registerButton:hover {
+  background-color: rgb(94, 94, 94);
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.875em;
+}
+
+@media (max-width: 1024px) {
+  .logoLink p {
+    margin-right: 100px; 
+    margin-left: 50px;
   }
 
-  .formContainer h1{
-    font-size: 36px;
-    text-align: center;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+  .formContainer h1 {
+    font-size: 30px; 
   }
-  
+
   .inputField {
-    margin-bottom: 15px;
-    height: 50px;
-    width: 95%;
-    padding: 6px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
-    background: transparent;
-    backdrop-filter: blur(50px);
-    
-  }
-  
-  .svgUser{
-    position: absolute;
-    right: 10px;
-    top: 140px;
-    width: 100px;
-  }
-  .svgLock{
-    position: absolute;
-    right: 10px;
-    top: 220px;
-    width: 100px;
-  }
-
-  .submitButton {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: #000000;
-    color: white;
-    cursor: pointer;
-    width: 100%;
     height: 45px;
-    border-radius: 40px;
   }
 
-  .submitButton:hover {
-    background-color: rgb(94, 94, 94);
+  .submitButton, .registerButton {
+    height: 40px; 
   }
-    
-  .registerButton{
-    background-color: black;
-    color: white;
-    border-radius: 40px;
-    width: 150px;
-    height: 40px;
-  }
-  
-  .registerButton:hover {
-    background-color: rgb(94, 94, 94);
 
+  .svgUser, .svgLock {
+    width: 80px; 
   }
-  .errorMessage {
-    color: red;
-    font-size: 0.875em;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 5%; 
+    flex-direction: column; 
+    align-items: center;
   }
-  
+
+  .logoLink p {
+    margin: 0; 
+  }
+
+  .formContainer h1 {
+    font-size: 24px; 
+  }
+
+  .inputField {
+    height: 40px; 
+    width: 90%;
+  }
+
+  .submitButton, .registerButton {
+    height: 35px; 
+  }
+
+  .svgUser, .svgLock {
+    width: 60px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .formContainer {
+    padding: 10px; 
+    border: 3px solid #dddddd; 
+  }
+
+  .formContainer h1 {
+    font-size: 20px; 
+  }
+
+  .inputField {
+    height: 35px; 
+    width: 85%;
+  }
+
+  .submitButton, .registerButton {
+    height: 30px; 
+  }
+
+  .svgUser, .svgLock {
+    width: 50px;
+  }
+}

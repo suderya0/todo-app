@@ -15,31 +15,30 @@ type FormData = {
   lastName: string;
   createdDate: Date;
 }; 
-
 export const useSignUp = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>(); //define formdata needs
+  const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
   const router = useRouter();
 
-  const onSubmit = async (data: FormData) => { 
+  const onSubmit = async (data: FormData) => {
     if(data.password.length < 8){
-      alert("Password must be at least 8 character long!")
+      alert("Password must be at least 8 characters long!");
       return;
     }
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, data.email, data.password); //firebase function for creating user
+      const userCredential = await createUserWithEmailAndPassword(auth, data.email, data.password);
       const user = userCredential.user;
       
-      
-      await setDoc(doc(db, 'users', user.uid), {           //save the user in firebase
+      await setDoc(doc(db, 'users', user.uid), {
         firstName: data.firstName,
         lastName: data.lastName,
         email: data.email,
         createdDate: Timestamp.now()
       });
 
-      await sendEmailVerification(userCredential.user)   //email validation
+      await sendEmailVerification(user); 
 
-      router.push('/login');   //push the user to login page after signed up
+      alert('Please check your email to verify your account.');
+      router.push('/login');
     } catch (error) {
       const authError = error as AuthError;
       console.error(authError.message);
@@ -54,3 +53,4 @@ export const useSignUp = () => {
     onSubmit,
   };
 };
+

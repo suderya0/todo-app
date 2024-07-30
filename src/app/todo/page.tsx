@@ -3,7 +3,7 @@
 import React from 'react';
 import useTodos from '../components/Todo';
 import styles from '../styles/Todos.module.css';
-import { auth } from '../firebase'; // Import auth from firebase configuration
+import { auth } from '../firebase'; 
 
 const TodoPage: React.FC = () => {
   const {

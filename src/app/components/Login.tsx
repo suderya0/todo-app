@@ -17,7 +17,14 @@ export const useLogin = () => {
 
   const onSubmit = async (data: FormData) => {
     try {
-      await signInWithEmailAndPassword(auth, data.email, data.password);   //function from firebase to check sign in and out
+      const userCredential = await signInWithEmailAndPassword(auth, data.email, data.password);   //function from firebase to check sign in and out
+      const user = userCredential.user;
+
+      if (!user.emailVerified) {
+        alert('Please verify your email before logging in.');
+        return;
+      }
+
       router.push('/todo');                       //push the todo page after logged in using await
     } catch (error) {
       const authError = error as AuthError;
@@ -27,7 +34,7 @@ export const useLogin = () => {
   };
 
   const handleRegisterRedirect = () => {
-    router.push('/signup'); // Butona tıklanınca yönlendirme işlemini yapın
+    router.push('/signup');  
   };
 
   return {             //send the attributes to the /login/page.tsx

@@ -104,18 +104,16 @@ const useTodos = () => {
   };
   const router = useRouter(); 
   const handleCalenderRedirect = () => {
-    router.push('/calender'); // Butona tıklanınca yönlendirme işlemini yapın
+    router.push('/calender');
   };
 
-  const handleLoggedOutRedirect = () =>{
-    router.push("/login");  //Logout yapıldıktan sonra geri tuşuna basıldığında login safasına yönlendirir
-  }
+
 
   return {
     user,
     loading,
     incompleteTodos,
-    completedTodos,
+    completedTodos,     //sende values to page.tsx and handle the bootstrap operations
     newTodo,
     setNewTodo,
     searchQuery,
@@ -125,7 +123,6 @@ const useTodos = () => {
     handleToggleComplete,
     handleDeleteTodo,
     handleCalenderRedirect,
-    handleLoggedOutRedirect,
   };
 };
 

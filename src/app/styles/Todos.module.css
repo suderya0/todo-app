@@ -4,10 +4,10 @@
   flex-direction: column;
   padding: 1rem;
   background-color: #f3f4f6;
-  background-image: url('../../images/todobackground.png'); /* Arka plan resmi */
-  background-size: cover; /* Resmi kapsayıcıya sığdırır */
-  background-position: center; /* Resmi ortalar */
-  background-repeat: no-repeat; /* Resmi tekrar etmez */
+  background-image: url('../../images/todobackground.png'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
 
 }
 
@@ -43,35 +43,23 @@
   color: #fff;
 }
 
-/* Girdi alanları stilini ayarla */
 .formContainer {
   display: flex;
-  flex-direction: column; /* İçerikleri dikeyde sıralar */
-  align-items: center; /* İçerikleri yatayda ortalar */
-  justify-content: center; /* İçeriği dikeyde ortalar */
-  height: 100; /* Kapsayıcının yüksekliğini ekran yüksekliğine ayarlar */
-  padding: 1rem; /* İç boşluk ekler */
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  height: 100; 
+  padding: 1rem; 
 }
 
-/* Girdi alanları stilini ayarla */
 .searchInput, .newTodoInput {
   padding: 0.5rem;
   border-radius: 0.5rem;
   border: 1px solid #d1d5db;
   margin-bottom: 1rem;
-  width: 300px; /* Genişlik ayarı */
+  width: 300px; 
 }
 
-/* Buton stilini ayarla */
-.addButton {
-  padding: 0.5rem 1rem;
-  background-color: #004f30;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  margin-left: 0.5rem;
-}
 
 .addButton:hover {
   background-color: #004f30;
@@ -79,31 +67,31 @@
 
 
 .logoutButton {
-  position: absolute; /* Konumlandırmayı mutlak yapar */
-  top: 1rem; /* Üstten 1rem boşluk bırakır */
-  right: 1rem; /* Sağdan 1rem boşluk bırakır */
-  padding: 0.25rem 0.75rem; /* Daha küçük iç boşluklar */
+  position: absolute; 
+  top: 1rem; 
+  right: 1rem; 
+  padding: 0.25rem 0.75rem; 
   background-color: #ef4444;
   color: #fff;
   font-weight: bold;
-  border-radius: 0.375rem; /* Köşeleri daha fazla yuvarlatır */
+  border-radius: 0.375rem; 
   cursor: pointer;
-  font-size: 0.875rem; /* Daha küçük yazı boyutu */
-  border: none; /* Kenarlıkları kaldırır */
+  font-size: 0.875rem; 
+  border: none; 
 }
 
 .calenderButton{
-  position: absolute; /* Konumlandırmayı mutlak yapar */
-  top: 5rem; /* Üstten 1rem boşluk bırakır */
-  right: 1rem; /* Sağdan 1rem boşluk bırakır */
-  padding: 0.25rem 0.75rem; /* Daha küçük iç boşluklar */
+  position: absolute;
+  top: 5rem; 
+  right: 1rem; 
+  padding: 0.25rem 0.75rem; 
   background-color:#8b96f0;
   color: #fff;
   font-weight: bold;
-  border-radius: 0.375rem; /* Köşeleri daha fazla yuvarlatır */
+  border-radius: 0.375rem; 
   cursor: pointer;
-  font-size: 0.875rem; /* Daha küçük yazı boyutu */
-  border: none; /* Kenarlıkları kaldırır */
+  font-size: 0.875rem; 
+  border: none; 
 }
 
 .logoutButton:hover {
@@ -114,14 +102,14 @@
   
   display: flex;
   justify-content: space-between;
-  gap: 1rem; /* Kolonlar arasına boşluk ekler */
+  gap: 1rem; 
 }
 
 .todoColumn {
   background-color: transparent;
   backdrop-filter: blur(20px);
   flex: 1;
-  background-size: cover; /* Resmi kapsayıcının boyutuna göre ölçeklendirir */
+  background-size: cover; 
   padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -137,7 +125,7 @@
   align-items: center;
   margin-bottom: 0.5rem;
   padding: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.8); /* İçeriği ayıran hafif bir arka plan */
+  background-color: rgba(255, 255, 255, 0.8); 
   border-radius: 0.375rem;
 }
 
@@ -170,4 +158,71 @@
 
 .baslik{
   font-family:monospace;
+}
+
+.addButton {
+  padding: 0.5rem 1rem;
+  background-color: #004f30;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .logoLink p {
+    margin-right: 0;
+    margin-left: 0;
+    font-size: 24px;
+  }
+
+  .formContainer {
+    padding: 0.5rem;
+  }
+
+  .searchInput, .newTodoInput {
+    width: 100%;
+  }
+
+  .addButton {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .logoutButton {
+    position: static;
+    margin: 1rem 0;
+  }
+
+  .calenderButton {
+    position: static;
+    margin: 1rem 0;
+  }
+
+  .todoColumns {
+    flex-direction: column;
+  }
+
+  .todoText {
+    font-size: 24px;
+    word-wrap: break-word; 
+    word-break: break-all; 
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .todoText {
+    font-size: 18px;
+  }
+
+  .tabButton {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
 }
