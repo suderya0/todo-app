@@ -2,12 +2,14 @@
 
 import React from 'react';
 import FullCalendar from '@fullcalendar/react';
+import { DateSelectArg } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { EventInput } from '@fullcalendar/core';
 import useTodos from '../components/Todo'; // useTodos kancasını içe aktarın
 import styles from '../styles/Calender.module.css';
+import { start } from 'repl';
 
 interface Todo {
   id: string;
@@ -44,15 +46,35 @@ const Calendar: React.FC = () => {
           center: "title",
           end: "dayGridMonth,timeGridWeek,timeGridDay"  
         }}
+        selectable = {true}
+        editable = {true}
         height={"90vh"}
         weekends={true}
         events={events}
         eventContent={renderEventContent}
         firstDay={1} 
+        select={handleDateSelect}
       />
     </div>
   );
 };
+let id = 0;
+const handleDateSelect = (selectInfo: DateSelectArg) => {
+  let title = prompt("Enter event title: ")
+  let calendarApi = selectInfo.view.calendar
+  calendarApi.unselect()
+  if(title){
+    calendarApi.addEvent({
+      id:String(id++),
+      title,
+      start: selectInfo.startStr,
+      end: selectInfo.endStr,
+      allDay: selectInfo.allDay
+    })
+  }
+}
+
+
 
 function renderEventContent(eventInfo: any) {
   return (
