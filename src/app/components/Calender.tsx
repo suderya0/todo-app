@@ -54,6 +54,7 @@ const Calendar: React.FC = () => {
         eventContent={renderEventContent}
         firstDay={1} 
         select={handleDateSelect}
+        eventClick={handleEventDelete}
       />
     </div>
   );
@@ -74,6 +75,12 @@ const handleDateSelect = (selectInfo: DateSelectArg) => {
   }
 }
 
+const handleEventDelete = (clickInfo: any) => {
+  if (confirm("Are you sure you want to delete this event?")) {
+    clickInfo.event.remove();
+    // Burada event'i silme işlemini yapabilirsiniz.
+  }
+};
 
 
 function renderEventContent(eventInfo: any) {
