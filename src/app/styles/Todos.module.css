@@ -39,7 +39,7 @@
 }
 
 .activeTab {
-  background-color: #004f30;
+  background-color: #FDC8C4;
   color: #fff;
 }
 
@@ -62,7 +62,7 @@
 
 
 .addButton:hover {
-  background-color: #004f30;
+  background-color: #FDC8C4;
 }
 
 
@@ -162,7 +162,7 @@
 
 .addButton {
   padding: 0.5rem 1rem;
-  background-color: #004f30;
+  background-color: #FDC8C4;
   color: #fff;
   font-weight: bold;
   border-radius: 0.5rem;
