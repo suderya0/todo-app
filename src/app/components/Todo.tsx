@@ -29,20 +29,29 @@ const useTodos = () => {
   const fetchTodos = async () => {
     if (!user) return;
     setLoadingTodos(true);
-
+  
     try {
-      const res = await fetch(`/api/todos?userId=${user.uid}`);         //get todo list from database with api
-      const todos = await res.json();                                   
-
-      setIncompleteTodos(todos.filter((todo: Todo) => !todo.completed));     
-      setCompletedTodos(todos.filter((todo: Todo) => todo.completed));
-
+      const res = await fetch(`/api/todos?userId=${user.uid}`);
+      const todos = await res.json();
+  
+      const parsedTodos = todos.map((todo: any) => {
+        const createdAt = todo.createdAt?.seconds ? new Date(todo.createdAt.seconds * 1000) : new Date(todo.createdAt);
+        return {
+          ...todo,
+          createdAt: createdAt,
+        };
+      });
+  
+      setIncompleteTodos(parsedTodos.filter((todo: Todo) => !todo.completed));
+      setCompletedTodos(parsedTodos.filter((todo: Todo) => todo.completed));
+  
       setLoadingTodos(false);
     } catch (error) {
       console.error('Failed to fetch todos:', error);
       setLoadingTodos(false);
     }
   };
+
 
   const handleAddTodo = async () => {
     if (!user || newTodo.trim() === '') return;
