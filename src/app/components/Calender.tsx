@@ -11,7 +11,7 @@ import styles from '../styles/Calender.module.css';
 import { DateSelectArg } from '@fullcalendar/core';
 
 const Calendar: React.FC = () => {
-  const { incompleteTodos, completedTodos } = useTodos();
+  const { incompleteTodos, completedTodos, handleDeleteTodo } = useTodos();
   const [events, setEvents] = useState<EventInput[]>([]);
 
   useEffect(() => {
@@ -45,9 +45,15 @@ const Calendar: React.FC = () => {
     }
   };
 
-  const handleEventDelete = (clickInfo: any) => {
+  const handleEventDelete = async (clickInfo: any) => {
     if (confirm('Are you sure you want to delete this event?')) {
+      const todoId = clickInfo.event.id; // Get the todo ID associated with the event
+
+      // Remove the event from the calendar UI
       clickInfo.event.remove();
+
+      // Delete the corresponding to-do from the database
+      await handleDeleteTodo(todoId);
     }
   };
 
@@ -77,7 +83,7 @@ const Calendar: React.FC = () => {
         eventContent={renderEventContent}
         firstDay={1}
         select={handleDateSelect}
-        eventClick={handleEventDelete}
+        eventClick={handleEventDelete} // Link event deletion to todo deletion
       />
     </div>
   );
