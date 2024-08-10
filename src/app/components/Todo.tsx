@@ -116,6 +116,9 @@ const useTodos = () => {
     router.push('/calender');
   };
 
+  const handleChangeInfoRedirect = () => {
+    router.push("/changeInfo")
+  }
 
 
   return {
@@ -132,6 +135,7 @@ const useTodos = () => {
     handleToggleComplete,
     handleDeleteTodo,
     handleCalenderRedirect,
+    handleChangeInfoRedirect,
   };
 };
 

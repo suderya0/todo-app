@@ -20,6 +20,7 @@ const TodoPage: React.FC = () => {
     handleToggleComplete,
     handleDeleteTodo,
     handleCalenderRedirect,
+    handleChangeInfoRedirect,
   } = useTodos();
 
     if (loading || loadingTodos) {
@@ -48,6 +49,8 @@ const TodoPage: React.FC = () => {
     return text.includes(search);
   });
 
+
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>To Do List</h1>
@@ -61,7 +64,17 @@ const TodoPage: React.FC = () => {
         Logout
       </button>
 
-      <button type="button" onClick={handleCalenderRedirect} className={styles.calenderButton}>Calender</button>
+      <button type="button" 
+        onClick={handleCalenderRedirect} 
+        className={styles.calenderButton}>Calender
+      </button>
+
+      <button type="button"
+      onClick={handleChangeInfoRedirect}
+      className={styles.infoChangeButton}>Change Information
+
+      </button>
+
 
       <div className={styles.formContainer}>
 
