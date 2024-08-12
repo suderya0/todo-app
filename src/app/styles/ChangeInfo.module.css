@@ -1,0 +1,31 @@
+.parent {
+    background-image: url('../../images/signinoutbackgraund.jpg'); /* Arka plan resmi */
+    background-position: center; /* Resmi ortalar */
+    background-repeat: no-repeat; /* Resmi tekrar etmez */
+    background-size: cover;
+    background-attachment: fixed;
+    height: 500vh;
+  }
+
+  .container {
+    justify-content: center;
+    align-items: center; 
+    display: flex;
+    margin-top: 100px;
+  }
+
+  .formContainer {
+    margin: 0 auto;
+    padding: 20px;
+    border: 5px solid #dddddd;
+    border-radius: 8px;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    position: relative;
+  }
+  
+  .formContainer h1 {
+    font-size: 36px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }

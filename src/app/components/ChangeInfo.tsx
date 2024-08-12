@@ -7,6 +7,7 @@ import { auth, db } from '../firebase';
 import { useRouter } from 'next/navigation';
 import { AuthError } from 'firebase/auth';
 import { useState } from 'react';
+import styles from "../styles/ChangeInfo.module.css"
 
 type PasswordFormData = {
   currentPassword: string;
@@ -97,10 +98,12 @@ export const ChangeInfo = () => {
   };
 
   return (
+    <div className={styles.parent}>
     <div>
       <h2>Update Password</h2>
       {error && <p style={{ color: 'red' }}>{error}</p>}
-      <form onSubmit={handleSubmitPassword(onPasswordSubmit)}>
+      <div className={styles.container}>
+      <form onSubmit={handleSubmitPassword(onPasswordSubmit)} className={styles.formContainer}>
         <div>
           <label>Current Password:</label>
           <input type="password" {...registerPassword('currentPassword', { required: true })} />
@@ -115,7 +118,7 @@ export const ChangeInfo = () => {
       </form>
 
       <h2>Update First Name</h2>
-      <form onSubmit={handleSubmitFirstName(onPersonalNameInfoSubmit)}>
+      <form onSubmit={handleSubmitFirstName(onPersonalNameInfoSubmit)} className={styles.formContainer}>
         <div>
           <label>First Name:</label>
           <input type="text" {...registerFirstName('firstName', { required: true })} />
@@ -125,7 +128,7 @@ export const ChangeInfo = () => {
       </form>
 
       <h2>Update Last Name</h2>
-      <form onSubmit={handleSubmitLastName(onPersonalSurnameInfoSubmit)}>
+      <form onSubmit={handleSubmitLastName(onPersonalSurnameInfoSubmit)} className={styles.formContainer}>
         <div>
           <label>Last Name:</label>
           <input type="text" {...registerLastName('lastName', { required: true })} />
@@ -133,6 +136,8 @@ export const ChangeInfo = () => {
         </div>
         <button type="submit">Update Last Name</button>
       </form>
+      </div>
+    </div>
     </div>
   );
 };
