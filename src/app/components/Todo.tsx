@@ -1,9 +1,10 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { auth } from '../firebase';
+import { auth , db } from '../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useRouter } from 'next/navigation';
+import { updateDoc , doc } from 'firebase/firestore';
 
 interface Todo {
   id: string;
@@ -19,6 +20,7 @@ const useTodos = () => {
   const [newTodo, setNewTodo] = useState('');                             //save new todo item
   const [searchQuery, setSearchQuery] = useState('');                     //Query
   const [loadingTodos, setLoadingTodos] = useState(true);                 //state of todos
+  const [updatingTodoText, setUpdatingTodoText] = useState<{ [id: string]: string }>({});
 
   useEffect(() => {                      
     if (user) {
@@ -51,6 +53,32 @@ const useTodos = () => {
       setLoadingTodos(false);
     }
   };
+
+
+
+  const handleUpdateTodo = async (id: string, userId?: string) => {
+    if (!userId) {
+      console.error('User ID is undefined');
+      return;
+    }
+  
+    const textToUpdate = updatingTodoText[id];
+    if (!textToUpdate || textToUpdate.trim() === '') return; // Boş metni güncelleme
+  
+    try {
+      const todoRef = doc(db, 'users', userId, 'todos', id);
+      await updateDoc(todoRef, {
+        text: textToUpdate,
+        completed: false // Diğer alanları da güncelleyebilirsin
+      });
+      console.log('Todo successfully updated');
+      fetchTodos(); // Verileri yeniden yüklemek için mevcut todos'u tekrar getir
+    } catch (error) {
+      console.error('Error updating todo: ', error);
+    }
+  };
+  
+  
 
 
   const handleAddTodo = async () => {
@@ -104,6 +132,8 @@ const useTodos = () => {
     }
   };
 
+  
+
   const handleDeleteTodo = async (id: string) => {
     await fetch(`/api/todos/${id}?userId=${user?.uid}`, {         //delete item from the list
       method: 'DELETE',
@@ -136,6 +166,10 @@ const useTodos = () => {
     handleDeleteTodo,
     handleCalenderRedirect,
     handleChangeInfoRedirect,
+    handleUpdateTodo,
+    updatingTodoText,          
+    setUpdatingTodoText,    
+    
   };
 };
 

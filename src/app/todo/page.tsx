@@ -21,6 +21,9 @@ const TodoPage: React.FC = () => {
     handleDeleteTodo,
     handleCalenderRedirect,
     handleChangeInfoRedirect,
+    handleUpdateTodo,
+    updatingTodoText,           // Bu state'i bileşene geri döndür
+    setUpdatingTodoText,    
   } = useTodos();
 
     if (loading || loadingTodos) {
@@ -48,8 +51,6 @@ const TodoPage: React.FC = () => {
     const text = todo.text?.toLowerCase() ?? '';
     return text.includes(search);
   });
-
-
 
   return (
     <div className={styles.container}>
@@ -122,6 +123,17 @@ const TodoPage: React.FC = () => {
                   className="mr-2"
                 />
                 <span className={`${styles.todoText} ${todo.completed ? styles.completed : ''}`}>{todo.text}</span>
+                <input
+                    type="text"
+                    value={updatingTodoText[todo.id] || ''} // Her Todo için ayrı güncellenen metin
+                    onChange={(e) => setUpdatingTodoText(prev => ({
+                      ...prev,
+                      [todo.id]: e.target.value // Todo id'ye göre metni güncelle
+                    }))}
+                    placeholder="Update todo text"
+                  />
+                <button className={styles.updateButton} onClick={() => handleUpdateTodo(todo.id , user?.uid )}>Update</button> {/* Güncelleme butonu */}
+                
                 <button
                   onClick={() => handleDeleteTodo(todo.id)}
                   className={styles.deleteButton}
@@ -144,6 +156,12 @@ const TodoPage: React.FC = () => {
                   className="mr-2"
                 />
                 <span className={`${styles.todoText} ${todo.completed ? styles.completed : ''}`}>{todo.text}</span>
+                <button
+                  onClick={() => handleUpdateTodo(todo.id)}
+                  className={styles.updateButton}
+                >
+                  Update
+                </button>
                 <button
                   onClick={() => handleDeleteTodo(todo.id)}
                   className={styles.deleteButton}

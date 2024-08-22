@@ -9,8 +9,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.status(400).json({ error: 'User ID is required and must be a single string' });
     return;
   }
-
-  const userTodosCollection = collection(db, 'users', userId, 'todos');
+  const userTodosCollection = collection(db, 'users', userId, 'todos'); 
 
   if (req.method === 'GET') {
     try {
